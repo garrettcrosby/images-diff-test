@@ -1,0 +1,26 @@
+name: Chainctl Test
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  assume-and-explore:
+    name: actions assume example
+
+    permissions:
+      id-token: write
+
+    runs-on: ubuntu-latest
+    steps:
+#obtained identity with
+# chainctl iam identities create gc-github-actions \
+# --identity-issuer="https://token.actions.githubusercontent.com" \
+# --subject-pattern="garrettcrosby/images-diff-test:(ref:refs/heads/main)" \
+# --role=registry.pull \
+# --parent=garrett.crosby
+    - uses: chainguard-dev/setup-chainctl@main
+      with:
+        identity: "8db1c02f42c500d4c158df58938ea71dbe2d3c12/440e0e6e30b62533"
+
+    - run: |
+        chainctl images repos list --parent garrett.crosby
