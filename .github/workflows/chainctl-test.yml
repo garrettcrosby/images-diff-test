@@ -15,7 +15,7 @@ jobs:
 #obtained identity with
 # chainctl iam identities create gc-github-actions \
 # --identity-issuer="https://token.actions.githubusercontent.com" \
-# --subject-pattern="garrettcrosby/images-diff-test:(ref:refs/heads/main)" \
+# --subject="repo:garrettcrosby/images-diff-test:ref:refs/heads/master" \
 # --role=registry.pull \
 # --parent=garrett.crosby
     - uses: chainguard-dev/setup-chainctl@main
