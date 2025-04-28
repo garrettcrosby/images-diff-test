@@ -20,7 +20,7 @@ jobs:
 # --parent=garrett.crosby
     - uses: chainguard-dev/setup-chainctl@main
       with:
-        identity: "8db1c02f42c500d4c158df58938ea71dbe2d3c12/06111c3b3c0c6e52"
+        identity: "8db1c02f42c500d4c158df58938ea71dbe2d3c12/7ec62e11aab6d50d"
 
     - run: |
         chainctl images repos list --parent garrett.crosby
