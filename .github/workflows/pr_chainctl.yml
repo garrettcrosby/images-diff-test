@@ -1,0 +1,20 @@
+name: Chainctl Test
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  assume-and-explore:
+    name: actions assume example
+
+    permissions:
+      id-token: write
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: chainguard-dev/setup-chainctl@main
+      with:
+        identity: "8db1c02f42c500d4c158df58938ea71dbe2d3c12/917551e4790a563d"
+
+    - run: |
+        chainctl images repos list --parent garrett.crosby
